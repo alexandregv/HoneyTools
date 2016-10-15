@@ -97,6 +97,10 @@ public class Main extends JavaPlugin{
         saveDefaultConfig(); 
         ConfigManager.loadConfig();
         
+        
+        saveResource("motd-FR.txt", false);
+        saveResource("motd-EN.txt", false);
+        
         //AntiWDL events
         getServer().getMessenger().registerIncomingPluginChannel(this, "WDL|INIT", new WDLEvent());
         getServer().getMessenger().registerOutgoingPluginChannel(this, "WDL|CONTROL");
