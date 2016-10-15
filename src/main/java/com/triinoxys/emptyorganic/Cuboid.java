@@ -1,4 +1,4 @@
-package com.triinoxys.emptyorganichh;
+package com.triinoxys.emptyorganic;
 
 import java.util.ArrayList;
 import java.util.HashMap;

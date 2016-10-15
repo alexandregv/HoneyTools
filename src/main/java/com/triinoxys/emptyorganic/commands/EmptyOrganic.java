@@ -1,4 +1,4 @@
-package com.triinoxys.emptyorganichh.commands;
+package com.triinoxys.emptyorganic.commands;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -14,13 +14,13 @@ import org.bukkit.command.TabCompleter;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
-import com.triinoxys.emptyorganichh.Cuboid;
-import com.triinoxys.emptyorganichh.Cut;
-import com.triinoxys.emptyorganichh.Empty;
-import com.triinoxys.emptyorganichh.ListBlock;
-import com.triinoxys.emptyorganichh.Replace;
-import com.triinoxys.emptyorganichh.Set;
-import com.triinoxys.emptyorganichh.Undo;
+import com.triinoxys.emptyorganic.Cuboid;
+import com.triinoxys.emptyorganic.Cut;
+import com.triinoxys.emptyorganic.Empty;
+import com.triinoxys.emptyorganic.ListBlock;
+import com.triinoxys.emptyorganic.Replace;
+import com.triinoxys.emptyorganic.Set;
+import com.triinoxys.emptyorganic.Undo;
 
 public class EmptyOrganic implements CommandExecutor, TabCompleter{
     

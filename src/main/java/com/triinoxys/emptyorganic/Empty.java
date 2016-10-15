@@ -1,4 +1,4 @@
-package com.triinoxys.emptyorganichh;
+package com.triinoxys.emptyorganic;
 
 import java.util.HashMap;
 import org.bukkit.Location;
@@ -7,7 +7,7 @@ import org.bukkit.block.Block;
 import org.bukkit.block.BlockFace;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
-import com.triinoxys.emptyorganichh.commands.EmptyOrganic;
+import com.triinoxys.emptyorganic.commands.EmptyOrganic;
 
 public class Empty {
 	private Player player;

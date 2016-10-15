@@ -1,4 +1,4 @@
-package com.triinoxys.emptyorganichh.listeners;
+package com.triinoxys.emptyorganic.listeners;
 
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
@@ -7,7 +7,7 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.block.Action;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.inventory.EquipmentSlot;
-import com.triinoxys.emptyorganichh.commands.EmptyOrganic;
+import com.triinoxys.emptyorganic.commands.EmptyOrganic;
 
 public class PlayerInterract implements Listener{
 	
