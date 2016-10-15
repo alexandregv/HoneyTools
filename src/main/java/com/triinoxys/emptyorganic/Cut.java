@@ -6,16 +6,19 @@ import org.bukkit.Material;
 import org.bukkit.block.Block;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
+import com.triinoxys.Main;
 import com.triinoxys.emptyorganic.commands.EmptyOrganic;
 
 public class Cut extends Cuboid {
 	private Player p;
+	private String uuid;
 	private int numberBlocks;
 	private HashMap<Location, ItemStack> undo = new HashMap<Location, ItemStack>();
 
 	public Cut(Cuboid cuboid, Player p){
 		super(cuboid);
 		this.p = p;
+		this.uuid = p.getUniqueId().toString();
 	}
 	
 	@SuppressWarnings("deprecation")
@@ -28,7 +31,15 @@ public class Cut extends Cuboid {
 			numberBlocks++;
 		}
 		new Undo(p, undo);
-		p.sendMessage(EmptyOrganic.prefix + "§aCut effectué §7(" + numberBlocks + " blocs cut)");
+		
+		if(Main.lang.containsKey(uuid) && Main.lang.get(uuid).equalsIgnoreCase("en")){
+		    p.sendMessage(EmptyOrganic.prefix + "§a" + numberBlocks + " blocks cut.");
+		}
+		else{
+            Main.lang.put(uuid, "fr");
+            
+            p.sendMessage(EmptyOrganic.prefix + "§a" + numberBlocks + " blocs coupés.");
+		}
 	}
 
 }

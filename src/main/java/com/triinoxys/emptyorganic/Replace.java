@@ -6,10 +6,12 @@ import org.bukkit.Location;
 import org.bukkit.block.Block;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
+import com.triinoxys.Main;
 import com.triinoxys.emptyorganic.commands.EmptyOrganic;
 
 public class Replace extends Cuboid {
 	private Player p;
+	private String uuid;
 	private List<ItemStack> replace;
 	private ItemStack replaceBlock;
 	private int numberBlocks;
@@ -20,6 +22,7 @@ public class Replace extends Cuboid {
 		this.p = p;
 		this.replace = replace;
 		this.replaceBlock = replaceBlock;
+		this.uuid = p.getUniqueId().toString();
 	}
 	
 	@SuppressWarnings("deprecation")
@@ -35,7 +38,14 @@ public class Replace extends Cuboid {
 		
 		new Undo(p, undo);
 		
-		p.sendMessage(EmptyOrganic.prefix + "§aRemplacement effectué §7(" + numberBlocks + " blocs remplacé)");
+		if(Main.lang.containsKey(uuid) && Main.lang.get(uuid).equalsIgnoreCase("en")){
+		    p.sendMessage(EmptyOrganic.prefix + "§a" + numberBlocks +" blocks replaced.");
+        }
+        else{
+            Main.lang.put(uuid, "fr");
+            
+            p.sendMessage(EmptyOrganic.prefix + "§a" + numberBlocks +" blocs remplacés.");
+        }
 	}
 
 }

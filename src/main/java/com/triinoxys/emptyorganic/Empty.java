@@ -7,10 +7,12 @@ import org.bukkit.block.Block;
 import org.bukkit.block.BlockFace;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
+import com.triinoxys.Main;
 import com.triinoxys.emptyorganic.commands.EmptyOrganic;
 
 public class Empty {
 	private Player player;
+	private String uuid;
 	private Cuboid cuboid;
 	private ListBlock listBlock;
 	
@@ -18,6 +20,7 @@ public class Empty {
 		this.player = player;
 		this.cuboid = cuboid;
 		this.listBlock = listBlocks;
+		this.uuid = player.getUniqueId().toString();
 	}
 	
 	private boolean isSlab(Material material){
@@ -31,12 +34,12 @@ public class Empty {
 	@SuppressWarnings("deprecation")
 	public void start() {
 		for(Block b : cuboid.getBlocks()){
-			if (b.getRelative(BlockFace.UP).getType() == Material.AIR)    continue;
-			if (b.getRelative(BlockFace.DOWN).getType() == Material.AIR)  continue;
+			if (b.getRelative(BlockFace.UP).getType()    == Material.AIR) continue;
+			if (b.getRelative(BlockFace.DOWN).getType()  == Material.AIR) continue;
 			if (b.getRelative(BlockFace.NORTH).getType() == Material.AIR) continue;
 			if (b.getRelative(BlockFace.SOUTH).getType() == Material.AIR) continue;
-			if (b.getRelative(BlockFace.EAST).getType() == Material.AIR)  continue;
-			if (b.getRelative(BlockFace.WEST).getType() == Material.AIR)  continue;
+			if (b.getRelative(BlockFace.EAST).getType()  == Material.AIR) continue;
+			if (b.getRelative(BlockFace.WEST).getType()  == Material.AIR) continue;
 			
 			if (isSlab(b.getRelative(BlockFace.UP).getType()))            continue;
 			if (isSlab(b.getRelative(BlockFace.DOWN).getType()))          continue;
@@ -57,7 +60,15 @@ public class Empty {
 		
 		new Undo(player, blocksSave);
 		
-		player.sendMessage(EmptyOrganic.prefix + "§aOrganic vidé. §7(" + listBlock.blocks.size() + " blocs remplacés)");
+		if(Main.lang.containsKey(uuid) && Main.lang.get(uuid).equalsIgnoreCase("en")){
+		    player.sendMessage(EmptyOrganic.prefix + "§aOrganic emptied. §7(" + listBlock.blocks.size() + " blocks deleted)");
+        }
+        else{
+            Main.lang.put(uuid, "fr");
+            
+            player.sendMessage(EmptyOrganic.prefix + "§aOrganic vidé. §7(" + listBlock.blocks.size() + " blocs supprimés)");
+        }
+		
 		listBlock.blocks.clear();
 	}
 
