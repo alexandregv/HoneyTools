@@ -125,10 +125,14 @@ public class EmptyOrganic implements CommandExecutor, TabCompleter{
 	                    else if(args[0].equalsIgnoreCase("replace")){
 	                        if(args.length != 3){
 	                            p.sendMessage(prefix + "§c/emptyorganic replace <from> <to>");
+	                            return true;
 	                        }
+	                        
 	                        if(!l1.containsKey(p) || !l2.containsKey(p)){
 	                            p.sendMessage(prefix + "§cPlease select an area before doing that !");
+	                            return true;
 	                        }
+	                        
 	                        Cuboid cuboid = new Cuboid(l1.get(p), l2.get(p));
 	                        ItemStack replaceBlock;
 	                        if(args[2].contains(":")){
@@ -140,6 +144,7 @@ public class EmptyOrganic implements CommandExecutor, TabCompleter{
 	                            int id = Integer.parseInt(args[2]);
 	                            replaceBlock = new ItemStack(id, 1);
 	                        }
+	                        
 	                        List<ItemStack> items = new ArrayList<ItemStack>();
 	                        if(args[1].contains(",")){
 	                            String[] blocks = args[1].split(",");
@@ -292,12 +297,16 @@ public class EmptyOrganic implements CommandExecutor, TabCompleter{
                         
                         // Replace
                         else if(args[0].equalsIgnoreCase("replace")){
-                            if(args.length != 3){
+                            if(args.length < 3){
                                 p.sendMessage(prefix + "§c/emptyorganic replace <blocs à remplacer (ex: 1,2:1)> <en ce bloc>");
+                                return true;
                             }
+                            
                             if(!l1.containsKey(p) || !l2.containsKey(p)){
                                 p.sendMessage(prefix + "§cMerci de sélectioner une zone avant de faire cela !");
+                                return true;
                             }
+                            
                             Cuboid cuboid = new Cuboid(l1.get(p), l2.get(p));
                             ItemStack replaceBlock;
                             if(args[2].contains(":")){
@@ -305,10 +314,12 @@ public class EmptyOrganic implements CommandExecutor, TabCompleter{
                                 int id = Integer.parseInt(idM[0].replace(":", ""));
                                 byte meta = Byte.parseByte(idM[1].replace(":", ""));
                                 replaceBlock = new ItemStack(id, 1, meta);
-                            }else{
+                            }
+                            else{
                                 int id = Integer.parseInt(args[2]);
                                 replaceBlock = new ItemStack(id, 1);
                             }
+                            
                             List<ItemStack> items = new ArrayList<ItemStack>();
                             if(args[1].contains(",")){
                                 String[] blocks = args[1].split(",");
