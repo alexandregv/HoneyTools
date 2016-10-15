@@ -1,0 +1,19 @@
+name: HoneyTools
+author: TriiNoxYs
+version: 0.0.1
+main: com.triinoxys.Main
+commands:
+  blockupdates:
+    description: Active ou desactive les updates de blocs
+    aliases: [bu, bupdates]
+  honeytools:
+    description: Infos sur la team
+    aliases: [hh]
+  lang:
+    description: Change la langue
+  clearchat:
+    description: Nettoie le chat
+  emptyorganic:
+    description: EmptyOrganic
+    aliases: [eo]
+  

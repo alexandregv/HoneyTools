@@ -1,0 +1,5 @@
+&7*------* *------* *------* *------* *------* *------*
+&3Welcome to the &cHoneyHive&3's server, &3%player% !
+&3The build is &eprivate&6.
+&3You are &e%online-pl% &6connected player(s).
+&7*------* *------* *------* *------* *------* *------*

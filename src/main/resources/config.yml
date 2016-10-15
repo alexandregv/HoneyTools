@@ -1,0 +1,31 @@
+fr:
+  join:
+    message: '&7[&9+&7]&9 %player%'
+    title: '&9Bienvenue sur le serveur'
+    subtitle: '&9de la Honey %player% !'
+    tab-header: '&3Bienvenue sur le serveur\n&bHoneyHive, &9%player% !'
+    tab-footer: '&3Site: honey-hive.fr\n &3TS: ts1.privateheberg.fr:10025'
+    actionbar: '&bMonde actuel: &l%world%'
+    sound: ''
+  leave:
+    message: '&7[&c-&7]&c %player%'
+en:
+  join:
+    message: '&7[&9+&7]&9 %player%'
+    title: '&9Welcome to the Honey'
+    subtitle: '&9server, %player% !'
+    tab-header: '&3Welcome to the\n&bHoneyHive &3server, &9%player% !'
+    tab-footer: '&3Site: honey-hive.fr\n 36TS: ts1.privateheberg.fr:10025'
+    actionbar: '&bCurrent world: &l%world%'
+    sound: ''
+  leave:
+    message: '&7[&c-&7]&c %player%'
+    
+prefixes:
+  admin: '&c[Admin] '
+  dev: '&5[Dev] '
+  sysadmin: '&6[SysAdmin] '
+  builder: '&3[Builder] '
+  visiteur: '&d[Visiteur] '
+  
+chat-format: '&8(&f%world%&8)&r%group% %player%&f: %message%'

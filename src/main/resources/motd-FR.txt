@@ -1,0 +1,5 @@
+&7*------* *------* *------* *------* *------* *------*
+&3Bienvenue sur le serveur de la &cHoneyHive&3, %player% !
+&3Le build est &eprive&6.
+&3Vous etes &e%online-pl% &3joueur(s) connecte(s).
+&7*------* *------* *------* *------* *------* *------*
