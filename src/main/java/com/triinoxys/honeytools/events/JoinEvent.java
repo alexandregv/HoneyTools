@@ -96,12 +96,14 @@ public class JoinEvent implements Listener{
     
     @SuppressWarnings("deprecation")
     private static void doScoreboard(Player p){
-        if     (Main.perms.getPrimaryGroup(p).equalsIgnoreCase("Admin"))    Main.admins   .addPlayer(p);
-        else if(Main.perms.getPrimaryGroup(p).equalsIgnoreCase("Dev"))      Main.devs     .addPlayer(p);
-        else if(Main.perms.getPrimaryGroup(p).equalsIgnoreCase("SysAdmin")) Main.sysadmins.addPlayer(p);
-        else if(Main.perms.getPrimaryGroup(p).equalsIgnoreCase("Builder"))  Main.builders .addPlayer(p);
-        else if(Main.perms.getPrimaryGroup(p).equalsIgnoreCase("Visiteur")) Main.visiteurs.addPlayer(p);
-        else                                                                Main.visiteurs.addPlayer(p);
+        if     (Main.perms.getPrimaryGroup(p).equalsIgnoreCase("Admin"))            Main.admins   .addPlayer(p);
+        else if(Main.perms.getPrimaryGroup(p).equalsIgnoreCase("Dev"))              Main.devs     .addPlayer(p);
+        else if(Main.perms.getPrimaryGroup(p).equalsIgnoreCase("SysAdmin"))         Main.sysadmins.addPlayer(p);
+        else if(Main.perms.getPrimaryGroup(p).equalsIgnoreCase("Builder"))          Main.builders .addPlayer(p);
+        else if(Main.perms.getPrimaryGroup(p).equalsIgnoreCase("Visiteur"))         Main.visiteurs.addPlayer(p);
+        else if(Main.perms.getPrimaryGroup(p).equalsIgnoreCase("CommunityManager")) Main.commmans .addPlayer(p);
+        else if(Main.perms.getPrimaryGroup(p).equalsIgnoreCase("Ami"))              Main.amis     .addPlayer(p);
+        else                                                                        Main.visiteurs.addPlayer(p);
         
         p.setScoreboard(Main.sb);
     }

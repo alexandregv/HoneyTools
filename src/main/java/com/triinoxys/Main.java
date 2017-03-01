@@ -50,7 +50,7 @@ public class Main extends JavaPlugin{
     public static HashMap<String, String> lang = new HashMap<String, String>();
     
     public static Scoreboard sb;
-    public static Team admins, devs, sysadmins, builders, visiteurs;
+    public static Team admins, devs, sysadmins, builders, commmans, amis, visiteurs;
     
     
     @Override
@@ -137,12 +137,12 @@ public class Main extends JavaPlugin{
         sb = Bukkit.getScoreboardManager().getNewScoreboard();
         
         admins = sb.registerNewTeam("A_admins");
-        admins.setPrefix(ChatColor.translateAlternateColorCodes('&', ConfigManager.getString("prefixes.admin")));
+        admins.setPrefix(ChatColor.translateAlternateColorCodes('&',    ConfigManager.getString("prefixes.admin")));
         admins.setSuffix("§f");
         admins.setOption(Option.NAME_TAG_VISIBILITY, OptionStatus.ALWAYS);
         
         devs = sb.registerNewTeam("B_devs");
-        devs.setPrefix(ChatColor.translateAlternateColorCodes('&', ConfigManager.getString("prefixes.dev")));
+        devs.setPrefix(ChatColor.translateAlternateColorCodes('&',      ConfigManager.getString("prefixes.dev")));
         devs.setSuffix("§f");
         devs.setOption(Option.NAME_TAG_VISIBILITY, OptionStatus.ALWAYS);
         
@@ -151,10 +151,20 @@ public class Main extends JavaPlugin{
         sysadmins.setSuffix("§f");
         sysadmins.setOption(Option.NAME_TAG_VISIBILITY, OptionStatus.ALWAYS);
         
-        builders = sb.registerNewTeam("D_builders");
-        builders.setPrefix(ChatColor.translateAlternateColorCodes('&', ConfigManager.getString("prefixes.builder")));
+        commmans = sb.registerNewTeam("D_commmans");
+        commmans.setPrefix(ChatColor.translateAlternateColorCodes('&',  ConfigManager.getString("prefixes.community-manager")));
+        commmans.setSuffix("§f");
+        commmans.setOption(Option.NAME_TAG_VISIBILITY, OptionStatus.ALWAYS);
+        
+        builders = sb.registerNewTeam("E_builders");
+        builders.setPrefix(ChatColor.translateAlternateColorCodes('&',  ConfigManager.getString("prefixes.builder")));
         builders.setSuffix("§f");
         builders.setOption(Option.NAME_TAG_VISIBILITY, OptionStatus.ALWAYS);
+        
+        amis = sb.registerNewTeam("F_amis");
+        amis.setPrefix(ChatColor.translateAlternateColorCodes('&',      ConfigManager.getString("prefixes.ami")));
+        amis.setSuffix("§f");
+        amis.setOption(Option.NAME_TAG_VISIBILITY, OptionStatus.ALWAYS);
         
         visiteurs = sb.registerNewTeam("Z_visiteurs");
         visiteurs.setPrefix(ChatColor.translateAlternateColorCodes('&', ConfigManager.getString("prefixes.visiteur")));
@@ -205,12 +215,14 @@ public class Main extends JavaPlugin{
     
     @SuppressWarnings("deprecation")
     private static void doScoreboard(Player p){
-        if     (Main.perms.getPrimaryGroup(p).equalsIgnoreCase("Admin"))    Main.admins   .addPlayer(p);
-        else if(Main.perms.getPrimaryGroup(p).equalsIgnoreCase("Dev"))      Main.devs     .addPlayer(p);
-        else if(Main.perms.getPrimaryGroup(p).equalsIgnoreCase("SysAdmin")) Main.sysadmins.addPlayer(p);
-        else if(Main.perms.getPrimaryGroup(p).equalsIgnoreCase("Builder"))  Main.builders .addPlayer(p);
-        else if(Main.perms.getPrimaryGroup(p).equalsIgnoreCase("Visiteur")) Main.visiteurs.addPlayer(p);
-        else                                                                Main.visiteurs.addPlayer(p);
+        if     (Main.perms.getPrimaryGroup(p).equalsIgnoreCase("Admin"))            Main.admins   .addPlayer(p);
+        else if(Main.perms.getPrimaryGroup(p).equalsIgnoreCase("Dev"))              Main.devs     .addPlayer(p);
+        else if(Main.perms.getPrimaryGroup(p).equalsIgnoreCase("SysAdmin"))         Main.sysadmins.addPlayer(p);
+        else if(Main.perms.getPrimaryGroup(p).equalsIgnoreCase("Builder"))          Main.builders .addPlayer(p);
+        else if(Main.perms.getPrimaryGroup(p).equalsIgnoreCase("Visiteur"))         Main.visiteurs.addPlayer(p);
+        else if(Main.perms.getPrimaryGroup(p).equalsIgnoreCase("CommunityManager")) Main.commmans .addPlayer(p);
+        else if(Main.perms.getPrimaryGroup(p).equalsIgnoreCase("Ami"))              Main.amis     .addPlayer(p);
+        else                                                                        Main.visiteurs.addPlayer(p);
         
         p.setScoreboard(Main.sb);
     }

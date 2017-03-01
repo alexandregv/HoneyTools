@@ -4,7 +4,7 @@ fr:
     title: '&9Bienvenue sur le serveur'
     subtitle: '&9de la Honey %player% !'
     tab-header: '&3Bienvenue sur le serveur\n&bHoneyHive, &9%player% !'
-    tab-footer: '&3Site: honey-hive.fr\n &3TS: ts1.privateheberg.fr:10025'
+    tab-footer: '&3Site: honey-hive.fr\n &3TS: ts.honey-hive.fr'
     actionbar: '&bMonde actuel: &l%world%'
     sound: ''
   leave:
@@ -15,7 +15,7 @@ en:
     title: '&9Welcome to the Honey'
     subtitle: '&9server, %player% !'
     tab-header: '&3Welcome to the\n&bHoneyHive &3server, &9%player% !'
-    tab-footer: '&3Site: honey-hive.fr\n 36TS: ts1.privateheberg.fr:10025'
+    tab-footer: '&3Site: honey-hive.fr\n 36TS: ts.honey-hive.fr'
     actionbar: '&bCurrent world: &l%world%'
     sound: ''
   leave:
@@ -24,8 +24,10 @@ en:
 prefixes:
   admin: '&c[Admin] '
   dev: '&5[Dev] '
-  sysadmin: '&6[SysAdmin] '
-  builder: '&3[Builder] '
+  sysadmin: '&2[SysAdmin] '
+  builder: '&6[Builder] '
   visiteur: '&d[Visiteur] '
+  ami: '&e[Ami] '
+  community-manager: '&6[CommManager] '
   
 chat-format: '&8(&f%world%&8)&r%group% %player%&f: %message%'
