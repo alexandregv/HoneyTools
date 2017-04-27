@@ -222,9 +222,7 @@ public class Main extends JavaPlugin{
         else if(Main.perms.getPrimaryGroup(p).equalsIgnoreCase("Visiteur"))         Main.visiteurs.addPlayer(p);
         else if(Main.perms.getPrimaryGroup(p).equalsIgnoreCase("CommunityManager")) Main.commmans .addPlayer(p);
         else if(Main.perms.getPrimaryGroup(p).equalsIgnoreCase("Ami"))              Main.amis     .addPlayer(p);
-        else                                                                        Main.visiteurs.addPlayer(p);
-        
-        p.setScoreboard(Main.sb);
+        else p.setScoreboard(Main.sb);
     }
     
 }

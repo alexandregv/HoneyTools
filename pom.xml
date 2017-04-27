@@ -21,24 +21,31 @@
         <url>http://nexus.hc.to/content/repositories/pub_releases</url>
     </repository>
     
+    <!-- Bukkit repo -->
+    <repository>
+      <id>bukkit-repo</id>
+      <url>http://repo.bukkit.org/content/groups/public/</url>
+    </repository>
+    
   </repositories>
+  
   
   <dependencies>
     
     <!--Spigot API-->
     <dependency>
-        <groupId>org.spigotmc</groupId>
-        <artifactId>spigot-api</artifactId>
-        <version>1.9.4-R0.1-SNAPSHOT</version>
-        <scope>provided</scope>
+           <groupId>org.spigotmc</groupId>
+           <artifactId>spigot-api</artifactId>
+           <version>1.11.2-R0.1-SNAPSHOT</version> 
+           <scope>provided</scope>
     </dependency>
     
-    <!--CraftBukkit API-->
+    <!--Bukkit API-->
     <dependency>
-        <groupId>org.bukkit</groupId>
-        <artifactId>craftbukkit</artifactId>
-        <version>1.9.4-R0.1-SNAPSHOT</version>
-        <scope>provided</scope>
+            <groupId>org.bukkit</groupId>
+            <artifactId>craftbukkit</artifactId>
+            <version>1.11.2-R0.1-SNAPSHOT</version>
+            <scope>provided</scope>
     </dependency>
     
     <!-- Vault API -->
@@ -48,7 +55,13 @@
             <version>1.6</version>
             <scope>provided</scope>
         </dependency>
-    
+
+    <dependency>
+      <groupId>com.google.guava</groupId>
+      <artifactId>guava</artifactId>
+      <version>17.0</version>
+      <scope>provided</scope>
+    </dependency>
   </dependencies>
 
 </project>
